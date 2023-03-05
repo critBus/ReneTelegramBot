@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../RenePython/.idea/RenePython.iml" filepath="$PROJECT_DIR$/../RenePython/.idea/RenePython.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ReneTelegramBot.iml" filepath="$PROJECT_DIR$/.idea/ReneTelegramBot.iml" />
     </modules>
   </component>

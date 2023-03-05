@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: ReneTelegramBot
+Version: 1.1
+Summary: genial
+Home-page: https://github.com/critBus/ReneTelegramBot
+Author: René Lázaro Collado Arteaga
+Author-email: renearteaga261998@gmail.com
+License: GPLv3
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
