@@ -1,34 +1,34 @@
-import os
-from telegram import Bot, ParseMode
-from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater,Dispatcher
-from telegram.ext import CommandHandler, ConversationHandler
-from telegram.ext import CallbackQueryHandler, MessageHandler, Filters
-from telegram import Update
-from telegram.ext import (
-    BasePersistence,
-    CallbackContext,
+import re
 
-    ChosenInlineResultHandler,
-    DispatcherHandlerStop,
+#from telegram.ext import InlineQueryHandler
+from typing import Dict, List
+
+from RenePy.Utiles import *
+from telegram import ParseMode, Update
+from telegram.ext import (
+    CommandHandler,
+    ConversationHandler,
+    Dispatcher,
+    Filters,
     Handler,
-    InlineQueryHandler,
+    MessageHandler,
+    Updater,
 )
 from telegram.ext.utils.types import CCT
 
-from telegram import InlineQueryResultArticle, InputTextMessageContent
-#from telegram.ext import InlineQueryHandler
-
-from typing import TYPE_CHECKING, Dict, List, NoReturn, Optional, Union, Tuple, cast, ClassVar
-from RenePy.Utiles import *
-
-from ReneTelegramBot.Utiles.TBUtiles import *
-from ReneTelegramBot.Utiles.TBUtiles import _enviarTecladoMenu,_banearUsuarioEsteUsuario,_enviarMensaje,_getArgsDeComando,_getUsuarioDeTelegramFrom,_getStrMark,_getTextDeMensaje
 from ReneTelegramBot.Clases.TBClases import *
-
 from ReneTelegramBot.Clases.TBClases import _BotonMenuInicial
-import re
+from ReneTelegramBot.Utiles.TBUtiles import *
+from ReneTelegramBot.Utiles.TBUtiles import (
+    _banearUsuarioEsteUsuario,
+    _enviarMensaje,
+    _enviarTecladoMenu,
+    _getArgsDeComando,
+    _getStrMark,
+    _getTextDeMensaje,
+)
+
+
 class SoporteDeBot:
     def estaEnMantenimiento(self)->bool:
         return False
@@ -81,14 +81,14 @@ class BotConversation:
     def sendMensaje(self,chat_id,text):
         try:
             self.updater.bot.sendMessage(chat_id,text)
-        except Exception as ex:
+        except Exception:
             try:
                 text=_getStrMark(text)
                 self.updater.bot.sendMessage(chat_id,text)
-            except Exception as ex:
+            except Exception:
                 try:
                     self.updater.bot.sendMessage(chat_id=chat_id,text= text, parse_mode=ParseMode.HTML)
-                except Exception as ex:
+                except Exception:
                     verException()
 
     def __getSalidaCorrecta(self,update, ctx,metodo):

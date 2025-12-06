@@ -1,5 +1,8 @@
-from ..Clases.TBClases import *
 from telegram.utils import helpers
+
+from ..Clases.TBClases import *
+
+
 def _getTextDeMensaje(update):
     return update.message.text
 def _getUsuarioDeTelegramFrom(update):

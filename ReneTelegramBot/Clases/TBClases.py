@@ -1,32 +1,9 @@
-import os
 
-from telegram import Bot, ParseMode
-from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater,Dispatcher
-from telegram.ext import CommandHandler, ConversationHandler
-from telegram.ext import CallbackQueryHandler, MessageHandler, Filters
-from telegram import Update
-from telegram.ext import (
-    BasePersistence,
-    CallbackContext,
-
-    ChosenInlineResultHandler,
-    DispatcherHandlerStop,
-    Handler,
-    InlineQueryHandler,
-)
-from telegram.ext.utils.types import CCT
-
-from telegram import InlineQueryResultArticle, InputTextMessageContent
 #from telegram.ext import InlineQueryHandler
-
-from typing import TYPE_CHECKING, Dict, List, NoReturn, Optional, Union, Tuple, cast, ClassVar
-
+from typing import List
 
 from RenePy.Utiles import *
-
-
+from telegram.ext import Filters
 
 NumeroOpcionActual:int=1000
 def getNumeroOpcionActual():
